@@ -1,6 +1,7 @@
 import pandas as pd
 import Data_load as load
 import numpy as np
+import matplotlib.pyplot as plt
 # Download latest version
 
 df = load.dataset_load("abcsds/pokemon")
@@ -9,6 +10,7 @@ df = load.dataset_load("abcsds/pokemon")
 #Amplitude
 
 df_speed = df[['Speed']]
+print(df_speed.head())
 amplitude_speed= np.ptp(df_speed)
 valorMin = np.min(df_speed)
 valorMax = np.max(df_speed)
@@ -47,3 +49,5 @@ print("A Amplitude Interquartilica é: "+ str(iqr))
 mad = 1.4826 *np.median(np.abs(df_speed- np.median(df_speed)))
 print("O Desvio Absoluto Mediano é: "+ str(mad))
 #----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
